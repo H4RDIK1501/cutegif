@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hardik's web</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      margin: 50px;
+    }
+
+    h1 {
+      color: #ff69b4; /* Hot Pink color for the heading */
+    }
+
+    #puppyGif {
+      max-width: 100%;
+      height: auto;
+      margin: 20px 0;
+    }
+
+    #noButton, #yesButton {
+      cursor: pointer;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      margin: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    #noButton:hover, #yesButton:hover {
+      background-color: #ff69b4; /* Hover color (Hot Pink) */
+      color: white;
+    }
+
+    #noButton {
+      background-color: #87ceeb; /* Light Sky Blue color */
+    }
+
+    #yesButton {
+      background-color: #00ff7f; /* Spring Green color */
+    }
+
+    #response {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Will you be my girlfriend?</h1>
+  <img id="puppyGif" src="C:\Users\Hardik\Desktop\Html\Peach Cat Sticker - Peach Cat Heart - Discover & Share GIFs.gif" alt="Animated Puppy Gif">
+  <button id="noButton" onclick="moveNoButton()">No</button>
+  <button id="yesButton" onclick="sayThankYou()">Yes</button>
+  <div id="response"></div>
+
+  <script>
+    function moveNoButton() {
+      var noButton = document.getElementById('noButton');
+      var newPositionX = Math.floor(Math.random() * (window.innerWidth - noButton.clientWidth));
+      var newPositionY = Math.floor(Math.random() * (window.innerHeight - noButton.clientHeight));
+
+      noButton.style.position = 'absolute';
+      noButton.style.left = newPositionX + 'px';
+      noButton.style.top = newPositionY + 'px';
+    }
+
+    function sayThankYou() {
+      var responseDiv = document.getElementById('response');
+      responseDiv.innerHTML = '<p>Thank you! &#10084;</p>';
+    }
+  </script>
+</body>
+</html>
